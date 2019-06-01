@@ -46,4 +46,3 @@ npm start
 | Env Var      | Example         | Description                         |
 |--------------|-----------------|-------------------------------------|
 | PORT         | PORT=9000       | Server port for http |
-| ROOM_POP_CAP | ROOM_POP_CAP=20 | Max connections per room            |
