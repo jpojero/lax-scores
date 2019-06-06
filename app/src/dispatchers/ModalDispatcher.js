@@ -1,11 +1,16 @@
 import { EventEmitter } from "events";
 
-export const ADMIN_LOG_IN_MODAL = "admin-log-in-modal";
+// "enumerated" event types 
+export const LOG_IN_MODAL = "log-in-modal";
 
 class ModalDispatcher extends EventEmitter{
 
     // Signals the admin lg in modal
-    AdminLogInbModal(){
-        this.emit(ADMIN_LOG_IN_MODAL);
+    LogInModal(){
+        this.emit(LOG_IN_MODAL);
+        console.log("Log in fired");
     }
 }
+
+// export singleton 
+export default new ModalDispatcher();
