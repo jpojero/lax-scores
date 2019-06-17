@@ -28,12 +28,10 @@ Install dependencies for both!
 #### App development mode
 ```bash
 # cd server (if in root)
-# terminal 1: electron dev mode
 npm start
 ```
 ```bash
 # cd app (if in root)
-# terminal 2: react dev server
 npm start
 ```
 
