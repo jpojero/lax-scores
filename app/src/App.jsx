@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import ModalDispatcher from './dispatchers/ModalDispatcher';
+import { ModalLogIn } from "./components/ModalLogIn";
 import './App.css';
 
 class App extends Component{
@@ -13,7 +14,7 @@ class App extends Component{
 
   }
 
-  callServer(){
+  TestServer(){
     fetch("http://localhost:9000/testServer")
       .then(res => res.text())
       .then(res => this.setState({serverResponse: res}))
@@ -21,18 +22,19 @@ class App extends Component{
   }
 
   componentDidMount(){
-    this.callServer();
+    this.TestServer();
   }
 
   render(){
+    console.log(this.state.serverResponse);
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-          <p className="App-intro">{this.state.serverResponse}</p>
-      </div>
+      <>
+        <div className="App">
+            <a className="LogIn" onClick={() => ModalDispatcher.LogInModal()}>Log In</a>
+            {/* <p className="App-intro">{this.state.serverResponse}</p> */}
+        </div>
+        <ModalLogIn/>
+      </>
     );
   }
 }
